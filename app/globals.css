@@ -54,3 +54,15 @@
     @apply bg-background text-foreground;
   }
 }
+/* Lazy Loading Images */
+img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[data-src] {
+  opacity: 0;
+}
+
+img.loaded {
+  opacity: 1;
+}

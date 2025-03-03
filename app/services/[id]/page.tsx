@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
@@ -233,6 +234,11 @@ const services = {
       }
     ]
   }
+}
+export async function generateStaticParams() {
+  return Object.keys(services).map(id => ({
+    id
+  }));
 }
 
 export default function ServiceDetailPage({ params }: { params: { id: string } }) {
