@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
@@ -90,12 +91,12 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28">
+      <section className="relative py-12 md:py-20 lg:py-28">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/5 z-0"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Ceramic Coating Services</h1>
-            <p className="text-xl text-muted-foreground mb-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Our Ceramic Coating Services</h1>
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8">
               Discover our range of premium ceramic coating services designed to protect and enhance your vehicle's appearance.
             </p>
           </div>
@@ -104,8 +105,8 @@ export default function ServicesPage() {
       
       {/* Services Grid */}
       <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <Card key={service.id} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
                 <div className="relative h-48">
@@ -122,8 +123,8 @@ export default function ServicesPage() {
                   )}
                 </div>
                 <CardHeader>
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                  <CardTitle className="text-xl sm:text-2xl">{service.title}</CardTitle>
+                  <CardDescription className="text-sm sm:text-base">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-2xl font-bold text-primary mb-4">{service.price}</p>
@@ -131,18 +132,18 @@ export default function ServicesPage() {
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
                         <Shield className="h-5 w-5 text-primary shrink-0 mr-2 mt-0.5" />
-                        <span>{feature}</span>
+                        <span className="text-sm sm:text-base">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
                 <CardFooter className="flex justify-between">
-                  <Button asChild variant="outline">
+                  <Button asChild variant="outline" className="text-sm sm:text-base">
                     <Link href={`/services/${service.id}`}>
                       Learn More
                     </Link>
                   </Button>
-                  <Button asChild>
+                  <Button asChild className="text-sm sm:text-base">
                     <Link href={`/booking?service=${service.id}`}>
                       Book Now
                     </Link>
@@ -156,14 +157,14 @@ export default function ServicesPage() {
       
       {/* Custom Services */}
       <section className="py-12 md:py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Need a Custom Solution?</h2>
-            <p className="text-muted-foreground mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Need a Custom Solution?</h2>
+            <p className="text-muted-foreground text-sm sm:text-base mb-8">
               We offer tailored ceramic coating packages for special vehicles, fleets, or specific requirements.
               Contact us to discuss your unique needs.
             </p>
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="text-sm sm:text-base">
               <Link href="/contact" className="flex items-center">
                 Contact Us <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -16,15 +15,20 @@ const HeroSection = () => {
   
   return (
     <section className="relative min-h-screen flex items-center pt-16">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-          alt="Ceramic Coated Car"
-          fill
-          priority
-          className="object-cover brightness-[0.4]"
-        />
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="\videos\0304.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
       <div className="container mx-auto px-4 z-10 py-20">
