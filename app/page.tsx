@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
@@ -9,6 +10,7 @@ import { Shield, Clock, Award, Sparkles, CheckCircle, ArrowRight } from 'lucide-
 import HeroSection from '@/components/home/hero-section'
 import HowItWorks from '@/components/home/how-it-works'
 import TestimonialSection from '@/components/home/testimonial-section'
+import { ImageComparisonSlider } from '@/components/ui/image-comparison-slider'
 
 export default function Home() {
   return (
@@ -26,54 +28,68 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="bg-card/50 border-none shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="text-center">
-                <Shield className="h-12 w-12 mx-auto text-primary mb-2" />
-                <CardTitle>Superior Protection</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-muted-foreground">
-                  Shields against UV rays, oxidation, bird droppings, tree sap, and other environmental contaminants.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+            <div>
+              <ImageComparisonSlider
+                beforeImage="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                afterImage="https://images.unsplash.com/photo-1494905998402-395d579af36f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                beforeLabel="Without Coating"
+                afterLabel="With Coating"
+              />
+              <p className="text-sm text-muted-foreground text-center mt-4">
+                Drag the slider to see the difference our ceramic coating makes
+              </p>
+            </div>
             
-            <Card className="bg-card/50 border-none shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="text-center">
-                <Clock className="h-12 w-12 mx-auto text-primary mb-2" />
-                <CardTitle>Long-Lasting</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-muted-foreground">
-                  Provides years of protection with proper maintenance, outlasting traditional waxes and sealants.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-card/50 border-none shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="text-center">
-                <Sparkles className="h-12 w-12 mx-auto text-primary mb-2" />
-                <CardTitle>Enhanced Gloss</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-muted-foreground">
-                  Creates a deep, mirror-like finish that enhances your vehicle's appearance and color depth.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-card/50 border-none shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="text-center">
-                <Award className="h-12 w-12 mx-auto text-primary mb-2" />
-                <CardTitle>Easy Maintenance</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-muted-foreground">
-                  Hydrophobic properties repel water and contaminants, making cleaning easier and less frequent.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="bg-card/50 border-none shadow-sm hover:shadow-md transition-shadow">
+                <CardHeader className="text-center">
+                  <Shield className="h-12 w-12 mx-auto text-primary mb-2" />
+                  <CardTitle>Superior Protection</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-center text-muted-foreground">
+                    Shields against UV rays, oxidation, bird droppings, tree sap, and other environmental contaminants.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-card/50 border-none shadow-sm hover:shadow-md transition-shadow">
+                <CardHeader className="text-center">
+                  <Clock className="h-12 w-12 mx-auto text-primary mb-2" />
+                  <CardTitle>Long-Lasting</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-center text-muted-foreground">
+                    Provides years of protection with proper maintenance, outlasting traditional waxes and sealants.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-card/50 border-none shadow-sm hover:shadow-md transition-shadow">
+                <CardHeader className="text-center">
+                  <Sparkles className="h-12 w-12 mx-auto text-primary mb-2" />
+                  <CardTitle>Enhanced Gloss</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-center text-muted-foreground">
+                    Creates a deep, mirror-like finish that enhances your vehicle's appearance and color depth.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-card/50 border-none shadow-sm hover:shadow-md transition-shadow">
+                <CardHeader className="text-center">
+                  <Award className="h-12 w-12 mx-auto text-primary mb-2" />
+                  <CardTitle>Easy Maintenance</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-center text-muted-foreground">
+                    Hydrophobic properties repel water and contaminants, making cleaning easier and less frequent.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

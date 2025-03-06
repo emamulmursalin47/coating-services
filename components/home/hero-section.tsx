@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { BookingBar } from './bookingbar'
 
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -26,6 +27,7 @@ const HeroSection = () => {
         >
           <source src="\videos\0304.mp4" type="video/mp4" />
           Your browser does not support the video tag.
+          
         </video>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
@@ -55,16 +57,17 @@ const HeroSection = () => {
             "flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-500 transform",
             isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           )}>
-            <Button asChild size="lg" className="text-lg">
-              <Link href="/booking">Book Now</Link>
-            </Button>
+            
             <Button asChild variant="outline" size="lg" className="text-lg bg-white/10 text-white border-white/20 hover:bg-white/20">
               <Link href="/services" className="flex items-center">
                 View Services <ChevronRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
+     
+    
         </div>
+        <BookingBar/>
       </div>
       
       {/* Scroll indicator */}
@@ -77,6 +80,7 @@ const HeroSection = () => {
           <div className="w-1.5 h-1.5 bg-white rounded-full animate-bounce mt-1"></div>
         </div>
       </div>
+      
     </section>
   )
 }
