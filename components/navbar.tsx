@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ShieldCheck, Menu, X } from 'lucide-react'
@@ -56,9 +56,12 @@ const Navbar = () => {
             <Button asChild variant="outline">
               <Link href="/contact">Contact Us</Link>
             </Button>
+            <Suspense fallback={<div>Loading booking details...</div>}>
             <Button asChild>
               <Link href="/booking">Book Now</Link>
             </Button>
+            </Suspense>
+         
           </div>
 
           {/* Mobile Menu Button */}

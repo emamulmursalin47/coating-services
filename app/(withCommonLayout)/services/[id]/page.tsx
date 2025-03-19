@@ -241,8 +241,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ServiceDetailPage({ params }: { params: { id: string } }) {
-  const service = services[params.id as keyof typeof services]
+export default async function ServiceDetailPage({ params }: any ) {
+  const service =  services[ await params.id as keyof typeof services]
   
   if (!service) {
     notFound()
