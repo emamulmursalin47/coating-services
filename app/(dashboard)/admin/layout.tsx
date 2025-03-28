@@ -14,7 +14,9 @@ import {
   DollarSign,
   ChevronDown,
   Menu,
-  X
+  X,
+  Megaphone,
+  Box
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -39,6 +41,16 @@ const sidebarItems = [
     title: 'Customers',
     href: '/admin/customers',
     icon: Users
+  },
+  {
+    title: 'Inventory',
+    href: '/admin/inventory',
+    icon: Box
+  },
+  {
+    title: 'Marketing',
+    href: '/admin/marketing',
+    icon: Megaphone
   },
   {
     title: 'Reports',
