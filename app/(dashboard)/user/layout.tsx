@@ -42,7 +42,7 @@ const sidebarItems = [
   },
   {
     title: 'Warranties',
-    href: '/dashboard/warranties',
+    href: '/user/warranties',
     icon: Shield
   },
   {
