@@ -37,7 +37,7 @@ const sidebarItems = [
   },
   {
     title: 'Documents',
-    href: '/dashboard/documents',
+    href: '/user/documents',
     icon: FileText
   },
   {

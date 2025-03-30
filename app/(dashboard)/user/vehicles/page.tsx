@@ -61,6 +61,7 @@ import {
 import { Calendar as CalendarComponent } from '@/components/ui/calendar'
 import { Textarea } from '@/components/ui/textarea'
 import { Separator } from '@/components/ui/separator'
+import Image from 'next/image'
 
 // Sample data for vehicles
 const initialVehicles = [
@@ -391,10 +392,12 @@ export default function VehiclesPage() {
           <div className="relative">
             <div className="h-16 w-16 rounded-md bg-secondary flex items-center justify-center overflow-hidden">
               {vehicle.image ? (
-                <img 
+                <Image
                   src={vehicle.image} 
                   alt={vehicle.name} 
                   className="h-full w-full object-cover" 
+                  width={500}
+                  height={500}
                 />
               ) : (
                 <Car className="h-8 w-8 text-secondary-foreground" />
@@ -560,10 +563,12 @@ export default function VehiclesPage() {
                 <TabsContent value="overview" className="m-0 p-6 space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-                      <img 
+                      <Image 
                         src={currentVehicle.image} 
                         alt={currentVehicle.name} 
-                        className="h-full w-full object-cover" 
+                        className="h-full w-full object-cover"
+                        height={500}
+                        width={500}
                       />
                     </div>
                     
